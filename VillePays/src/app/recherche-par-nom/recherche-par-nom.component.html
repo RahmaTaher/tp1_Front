@@ -1,0 +1,31 @@
+<div class="container">
+
+    <form class="form-inline">
+        <div class="form-group mx-sm-3 mb-2 mt-2 ">
+        <label>Nom Ville en tapant</label>
+        <input #nom [(ngModel)]="searchTerm" name="searchTerm" class="form-control" >
+        </div>
+    </form>
+        
+
+    <div class="card shadow mb-4">
+        <div class="card-body">
+            <table class="table table-striped">
+                <thead>
+                    <tr> <th>IdVille</th> <th>NumV</th><th>Nom</th> <th>codePostal</th>  <th>Date Création</th><th>Pays</th> </tr>
+                </thead>
+                <tbody *ngFor="let ville of villes | filter:searchTerm  ">
+                    <tr>
+                        <td>{{ville.idVille}}</td>
+                        <td>{{ville.NumV}}</td>
+                        <td>{{ville.nom}}</td>
+                        <td>{{ville.CodePostal}}</td>
+                        <td>{{ville.dateCreation | date:'dd/MM/yyyy'}}</td>
+                        <td>{{ville.Pays?.nomCPays}}</td> 
+                       
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

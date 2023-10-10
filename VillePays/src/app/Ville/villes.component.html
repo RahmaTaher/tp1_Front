@@ -1,0 +1,29 @@
+<div class="container">
+    <div class="card shadow mb-4">
+        <div class="card-body">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>id</th>
+                        <th>Nom Ville</th>
+                        <th>Numero ville</th>
+                        <th>Code Postal</th>
+                        <th>Date Creation</th>
+                        
+                    </tr>
+                </thead>
+                <tbody *ngFor="let ville of villes">
+                    <tr>
+                        <td>{{v.idVille}}</td>
+                        <td>{{v.nom}}</td>
+                        <td >{{v.NumV}}</td>
+                        <td> {{v.codePostal}} </td>
+                        <td> {{v.DateCreation}}</td>
+                        <td><a class="btn btn-danger" (click)="supprimerVille(Ville)">Supprimer</a></td>
+                        <td><a class="btn btn-success" [routerLink]="['/updateVille',Ville.idVille]">Modifier</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

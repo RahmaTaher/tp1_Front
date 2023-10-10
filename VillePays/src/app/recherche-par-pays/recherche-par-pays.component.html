@@ -1,0 +1,37 @@
+<div class="container">
+
+    <div class="col-sm-4 col-md-4 col-lg-4 mb-4"> 
+        <label>Pays </label> 
+        <select class="form-control form-control-lg"   id="idPays" name="idPays"
+         [(ngModel)]="IdPays" (change)="onChange()">
+          <option *ngFor="let p of payss" value="{{p.idPays}}">
+               {{p.nomPays}} 
+         </option>
+    </select> 
+   </div>
+
+
+   
+
+    <div class="card shadow mb-4">
+        <div class="card-body">
+            <table class="table table-striped">
+                <thead>
+                    <tr> <th>Id</th><th>NumV</th><th>Nom</th> <th>codePostal</th>  <th>Date Création</th><th>Pays</th> </tr>
+                </thead>
+                <tbody *ngFor="let ville of villes">
+                    <tr>
+                        <td>{{ville.idVille}}</td>
+                        <td>{{ville.NumV}}</td>
+                        <td>{{ville.nom}}</td>
+                        <td>{{ville.CodePostal}}</td>
+                        <td>{{ville.dateCreation | date:'dd/MM/yyyy'}}</td>
+                        <td>{{ville.Pays?.nom}}</td> 
+                       <!--  <td><a class="btn btn-danger" (click)="supprimerProduit(produit)">Supprimer</a></td>
+                        <td><a class="btn btn-success" [routerLink]="['/updateProduit',produit.idProduit]">Modifier</a></td> -->
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

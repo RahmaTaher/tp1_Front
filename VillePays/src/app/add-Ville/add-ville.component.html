@@ -1,0 +1,31 @@
+<div class="container">
+    <div>
+        <h2>Ajouter une Ville :</h2>
+    </div>
+    <form>
+        <div class="form-group">
+            <label class="control-label" hidden>ID Ville:</label>
+            <input type="hidden" name="idVille" class="form-control" th:value="${ville.idVille}" />
+        </div>
+        <div class="form-group">
+            <label class="control-label">Nom :</label>
+            <input type="text" name="nom" class="form-control" th:value="${ville.nom}" />
+            <span th:errors="${ville.nom}" class="text-danger"></span>
+        </div>
+         <div class="form-group">
+            <label class="control-label">Numero :</label>
+            <input type="text" name="NumV" class="form-control" th:value="${ville.NumV}" />
+            <span th:errors="${ville.NumV}" class="text-danger"></span>
+        </div>
+         <div class="form-group">
+            <label class="control-label">Code Postal:</label>
+            <input type="text" name="codePostal" class="form-control" th:value="${ville.codePostal}" />
+            <span th:errors="${ville.codePostal}" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label class="control-label">Date de création :</label>
+            <input type="date" name="dateCreation" class="form-control" th:value="${#dates.format(ville.dateCreation, 'yyyy-MM-dd')}" />
+            <span th:errors="${ville.dateCreation}" class="text-danger"></span>
+        </div>
+    </form>
+</div>
